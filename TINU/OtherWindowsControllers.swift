@@ -12,7 +12,7 @@ public class DriveDetectInfoWindowController: GenericWindowController {
 	
 	override public func windowDidLoad() {
 		super.windowDidLoad()
-		self.window?.title += ": Why my storage device is not detected?"
+		self.window?.title += ": Why is my storage device not detected?"
 	}
 	
 	convenience init() {
@@ -29,7 +29,7 @@ public class DownloadAppWindowController: GenericWindowController {
 	
 	override public func windowDidLoad() {
 		super.windowDidLoad()
-		self.window?.title += ": Download a macOS installer app from the app store"
+		self.window?.title += ": Download a macOS installer from the App Store"
 	}
 	
 	convenience init() {

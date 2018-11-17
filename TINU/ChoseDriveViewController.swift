@@ -811,14 +811,14 @@ class ChoseDriveViewController: GenericViewController {
 			
             if cvm.shared.sharedVolumeNeedsPartitionMethodChange != nil /*&& sharedVolumeNeedsFormat != nil*/{
 				
-				var dialogText = "The drive \"\(dname)\" needs to be formatted entirely to be used to create a bootable macOS installer, because it does not use the GUID partition table"
+				var dialogText = "The drive \"\(dname)\" needs to be completely formatted (erased) to be used for a bootable macOS installer, because it does not currently use the GUID partition table scheme."
                 
                 if sharedInstallMac{
-                    dialogText = "The drive \"\(dname)\" needs to be formatted entirely to install macOS on it, because it does not use the GUID partition table"
+                    dialogText = "The drive \"\(dname)\" needs to be completely formatted (erased) to install macOS on it, because it does not use the GUID partition table scheme."
                 }
 				
 				if cvm.shared.sharedVolumeNeedsPartitionMethodChange{
-					if !dialogCustomWarning(question: "Format \"\(dname)\"?", text: dialogText, style: .warning, mainButtonText: "Don't format", secondButtonText: "Format"){
+					if !dialogCustomWarning(question: "Format \"\(dname)\"?", text: dialogText, style: .warning, proceedButtonText: "Erase", cancelButtonText: "Don't Erase"){
                         return
                     }
                 }
@@ -826,7 +826,7 @@ class ChoseDriveViewController: GenericViewController {
 			
 			if cvm.shared.sharedDoTimeMachineWarn{
 				let pname = cvm.shared.currentPart.name
-				if !dialogCustomWarning(question: "Format \"\(pname)\"?", text: "The partition \"\(pname)\" is used for time machine backups, and may contain usefoul backup data, that will be lost if you use it", style: .warning, mainButtonText: "Don't format", secondButtonText: "Format"){
+				if !dialogCustomWarning(question: "Format \"\(pname)\"?", text: "The partition \"\(pname)\" is used for Time Machine backups, and may contain your backed up files. Your backups will be lost if you use it!", style: .warning, proceedButtonText: "Erase", cancelButtonText: "Don't Erase"){
 					return
 				}
 			}
@@ -881,7 +881,7 @@ class ChoseDriveViewController: GenericViewController {
                 sz *= 1024 * 1024
             }else if n != "MB"{
                 if isDrive{
-                    print("     this drive has a size unit unkown, skipping this drive")
+                    print("     this drive has an unknown size unit, skipping this drive")
                 }else{
                     print("         volume size unit unkown, skipping this volume")
                 }

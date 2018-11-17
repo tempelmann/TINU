@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -416,13 +416,13 @@
                                                 <action selector="openFAQs:" target="Voe-Tx-rLC" id="Ac7-xs-J1Y"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Why my storage device is not detected?" id="t4Z-eO-Otu">
+                                        <menuItem title="Why is my storage device not detected?" id="t4Z-eO-Otu">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openWMSDIND:" target="Voe-Tx-rLC" id="fiJ-0w-Urb"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Get a macOS Installer App" id="ujX-5E-vhx">
+                                        <menuItem title="Download macOS Installer…" id="ujX-5E-vhx">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="openDownloadMacApp:" target="Voe-Tx-rLC" id="zHa-3i-Sfj"/>
@@ -559,7 +559,7 @@
                             <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gge-Zo-3ww">
                                 <rect key="frame" x="169" y="70" width="283" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="bevel" title="Why my storage device is not detected?" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B1n-px-r2u">
+                                <buttonCell key="cell" type="bevel" title="Why is my storage device not detected?" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B1n-px-r2u">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
@@ -1101,15 +1101,15 @@
                                 <rect key="frame" x="20" y="96" width="580" height="182"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" copiesOnScroll="NO" id="fCD-re-KbG">
-                                    <rect key="frame" x="1" y="1" width="578" height="180"/>
+                                    <rect key="frame" x="1" y="1" width="563" height="180"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" editable="NO" importsGraphics="NO" verticallyResizable="YES" baseWritingDirection="leftToRight" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" linkDetection="YES" dashSubstitution="YES" textCompletion="NO" spellingCorrection="YES" id="CPE-h3-g85">
-                                            <rect key="frame" x="0.0" y="0.0" width="578" height="180"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="563" height="180"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <size key="minSize" width="578" height="180"/>
+                                            <size key="minSize" width="563" height="180"/>
                                             <size key="maxSize" width="622" height="10000000"/>
                                             <attributedString key="textStorage">
                                                 <fragment content="license">
@@ -1133,7 +1133,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.10059985003749063" horizontal="NO" id="K1O-1W-auz">
-                                    <rect key="frame" x="563" y="1" width="16" height="180"/>
+                                    <rect key="frame" x="564" y="1" width="15" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1222,7 +1222,7 @@ Gw
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8GV-gj-CzL">
                                 <rect key="frame" x="18" y="413" width="584" height="24"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Download a macOS installer app from the App Store" id="8vK-H3-vl8">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Download a macOS installer from the App Store" id="8vK-H3-vl8">
                                     <font key="font" metaFont="systemBold" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1420,7 +1420,7 @@ Gw
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="js1-gy-7fy">
                                 <rect key="frame" x="18" y="286" width="584" height="24"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Choose the macOS installer app to use for the bootable macOS installer" id="GcE-iD-nx3">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Choose the macOS installer" id="GcE-iD-nx3">
                                     <font key="font" metaFont="systemBold" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1486,7 +1486,7 @@ Gw
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fIp-jo-dv3">
                                 <rect key="frame" x="18" y="114" width="584" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No usable macOS Installer apps where detected" id="Hfz-12-vre">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="No usable macOS installers were found" id="Hfz-12-vre">
                                     <font key="font" metaFont="system" size="16"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1511,7 +1511,7 @@ Gw
                             <button hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXY-vK-SZ0">
                                 <rect key="frame" x="108" y="70" width="200" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="bevel" title="Get a macOS Installer app" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bQq-T5-pMM">
+                                <buttonCell key="cell" type="bevel" title="Download a macOS installer" bezelStyle="regularSquare" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bQq-T5-pMM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="14"/>
                                 </buttonCell>
@@ -1611,7 +1611,7 @@ Gw
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbS-n9-O9c">
                                 <rect key="frame" x="71" y="262" width="531" height="16"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="These are optional customizatios for the creation of the bootable macOS installer." id="o4k-ai-G1V">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="These are optional customizations for the creation of the bootable macOS installer." id="o4k-ai-G1V">
                                     <font key="font" metaFont="cellTitle"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -1643,11 +1643,11 @@ Gw
                                 <rect key="frame" x="220" y="60" width="380" height="183"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="8gN-3u-nOz">
-                                    <rect key="frame" x="1" y="1" width="378" height="181"/>
+                                    <rect key="frame" x="1" y="1" width="363" height="181"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4eo-6V-eFj">
-                                            <rect key="frame" x="0.0" y="0.0" width="363" height="166"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="166"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </view>
                                     </subviews>
@@ -1657,7 +1657,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="pFR-Tu-iza">
-                                    <rect key="frame" x="363" y="1" width="16" height="181"/>
+                                    <rect key="frame" x="364" y="1" width="15" height="181"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -1704,7 +1704,7 @@ Gw
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QVP-Rp-Lmi">
                                 <rect key="frame" x="18" y="286" width="584" height="24"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="The volume and macOS installer app below will be used, are you sure?" id="7Jh-Cb-OA3">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="The volume and macOS installer below will be used." id="7Jh-Cb-OA3">
                                     <font key="font" metaFont="systemBold" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1729,17 +1729,6 @@ Gw
                                 </buttonCell>
                                 <connections>
                                     <action selector="goBack:" target="5xT-7C-9Jy" id="9bG-7J-1pL"/>
-                                </connections>
-                            </button>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fe8-EL-Jck">
-                                <rect key="frame" x="453" y="25" width="153" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                <buttonCell key="cell" type="push" title="Yes, I understand" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p9c-xq-qE9">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="systemBold"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="install:" target="5xT-7C-9Jy" id="uR9-2z-Eia"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HaN-dq-5OT">
@@ -1809,6 +1798,17 @@ Gw
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fe8-EL-Jck">
+                                <rect key="frame" x="512" y="25" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="Proceed" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="p9c-xq-qE9">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="systemBold"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="install:" target="5xT-7C-9Jy" id="uR9-2z-Eia"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>
@@ -1841,7 +1841,7 @@ Gw
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jux-GJ-cch">
                                 <rect key="frame" x="18" y="286" width="584" height="24"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Bootale macOS installer creation" id="REo-7T-4co">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Creating a bootable macOS installer" id="REo-7T-4co">
                                     <font key="font" metaFont="systemBold" size="14"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1887,7 +1887,7 @@ Gw
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcb-ov-5ph">
                                 <rect key="frame" x="134" y="240" width="352" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="The bootable macOS installer creation is in progress Please wait and leave the window as is" id="k4d-Tc-ALr">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Creation is in progress. Please wait." id="k4d-Tc-ALr">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" red="0.95891410112380981" green="0.95622009038925171" blue="0.95902365446090698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1998,7 +1998,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="6H1-Ij-pJT">
                                     <font key="font" metaFont="system" size="14"/>
-                                    <string key="title">This is a tool that helps you to create a macOS install media. Before starting you need:   - At least an 8 GB USB Flash Drive   - A copy of the macOS installer app (of any version starting from Mavericks) in your      /Applications folder or in the root of a storage device connected to the computer</string>
+                                    <mutableString key="title">This is a tool that helps you create a macOS install medium. Before starting, you will need:   - USB Flash Drive (8 GB or larger).   - A copy of the macOS installer app (Mavericks or later), preferrably in your      /Applications folder (you can locate it manually, though).</mutableString>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -2038,9 +2038,9 @@ Gw
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Removable" id="8YY-Ud-HTk"/>
                                     </imageView>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Qs-UR-bjL">
-                                        <rect key="frame" x="76" y="27" width="506" height="17"/>
+                                        <rect key="frame" x="76" y="1" width="506" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="An USB thumb drive of 8 GB or higher" id="bCX-Qv-gRK">
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="A USB thumb drive with 8 GB or more, or an external USB hard disk that you can completely erase." id="bCX-Qv-gRK">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -2049,8 +2049,10 @@ Gw
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eH6-3j-XLl">
                                         <rect key="frame" x="76" y="97" width="506" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" title="A macOS installer app downloaded from the App Store (Mavericks or more recent)" id="qFD-Oz-njI">
+                                        <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="qFD-Oz-njI">
                                             <font key="font" metaFont="system"/>
+                                            <string key="title">A macOS installer downloaded from the App Store
+(macOS 10.9 Mavericks or more recent).</string>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
@@ -2222,15 +2224,15 @@ Gw
                                 <rect key="frame" x="20" y="66" width="580" height="212"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="BoY-aL-VEi">
-                                    <rect key="frame" x="1" y="1" width="578" height="210"/>
+                                    <rect key="frame" x="1" y="1" width="563" height="210"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" editable="NO" importsGraphics="NO" verticallyResizable="YES" findStyle="panel" allowsCharacterPickerTouchBarItem="NO" textCompletion="NO" id="YjC-b1-CdR">
-                                            <rect key="frame" x="0.0" y="0.0" width="578" height="210"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="563" height="210"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="578" height="210"/>
+                                            <size key="minSize" width="563" height="210"/>
                                             <size key="maxSize" width="618" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -2241,7 +2243,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Ijx-19-zkH">
-                                    <rect key="frame" x="563" y="1" width="16" height="210"/>
+                                    <rect key="frame" x="564" y="1" width="15" height="210"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -2424,7 +2426,7 @@ Gw
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="OkP-ff-ZIR">
                                     <font key="font" metaFont="cellTitle"/>
-                                    <string key="title">The recommended default options will: create the basic bootable macOS installer, apply the icon of the installer app on it, copy TINU on it, create the "README" file and will keep the original boot files</string>
+                                    <string key="title">The recommended default options will: Create the basic bootable macOS installer, apply the icon of the installer app to it, copy TINU on it, create the "README" file and to keep the original boot files.</string>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -2483,7 +2485,7 @@ Gw
         <scene sceneID="G5H-qz-IHB">
             <objects>
                 <windowController storyboardIdentifier="DriveDetectionInfo" id="1oO-Lg-92d" customClass="DriveDetectInfoWindowController" customModule="TINU" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="TINU: Why my storage device is not detected?" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="07X-dh-bE6">
+                    <window key="window" title="TINU: Why is my storage device not detected?" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="07X-dh-bE6">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="245" y="310" width="480" height="270"/>
@@ -2541,15 +2543,15 @@ Gw
                                 <rect key="frame" x="20" y="73" width="580" height="238"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="D4h-Ke-c4w">
-                                    <rect key="frame" x="1" y="1" width="578" height="236"/>
+                                    <rect key="frame" x="1" y="1" width="563" height="236"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" allowsCharacterPickerTouchBarItem="NO" allowsNonContiguousLayout="YES" textCompletion="NO" id="rK7-0i-3Pa">
-                                            <rect key="frame" x="0.0" y="0.0" width="578" height="236"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="563" height="236"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="578" height="236"/>
+                                            <size key="minSize" width="563" height="236"/>
                                             <size key="maxSize" width="580" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -2560,7 +2562,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="mCb-cu-gTM">
-                                    <rect key="frame" x="563" y="1" width="16" height="236"/>
+                                    <rect key="frame" x="564" y="1" width="15" height="236"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -2618,15 +2620,15 @@ Gw
                                 <rect key="frame" x="20" y="73" width="580" height="238"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <clipView key="contentView" ambiguous="YES" drawsBackground="NO" id="unI-ig-fqM">
-                                    <rect key="frame" x="1" y="1" width="578" height="236"/>
+                                    <rect key="frame" x="1" y="1" width="563" height="236"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" findStyle="panel" allowsCharacterPickerTouchBarItem="NO" allowsNonContiguousLayout="YES" textCompletion="NO" spellingCorrection="YES" id="OXq-i4-7HW">
-                                            <rect key="frame" x="0.0" y="0.0" width="578" height="236"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="563" height="236"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="578" height="236"/>
+                                            <size key="minSize" width="563" height="236"/>
                                             <size key="maxSize" width="580" height="10000000"/>
                                             <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                         </textView>
@@ -2637,7 +2639,7 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="aac-Xk-kbC">
-                                    <rect key="frame" x="563" y="1" width="16" height="236"/>
+                                    <rect key="frame" x="564" y="1" width="15" height="236"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
@@ -2658,7 +2660,7 @@ Gw
         <scene sceneID="Jwu-ci-4cB">
             <objects>
                 <windowController storyboardIdentifier="DownloadApp" id="VTe-PZ-3Hj" customClass="DownloadAppWindowController" customModule="TINU" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="TINU: Download a macOS installer app from the App Store" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="HOO-gR-4yR">
+                    <window key="window" title="TINU: Download a macOS installer from the App Store" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="HOO-gR-4yR">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="245" y="310" width="480" height="270"/>
@@ -2688,7 +2690,7 @@ Gw
         <image name="warning" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nx8-HB-rqT"/>
+        <segue reference="bVK-rx-zgF"/>
         <segue reference="fLT-cJ-H3F"/>
     </inferredMetricsTieBreakers>
 </document>

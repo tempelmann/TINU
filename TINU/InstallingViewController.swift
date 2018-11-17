@@ -266,7 +266,7 @@ class InstallingViewController: GenericViewController{
 							
 							let myContext = LAContext()
 							
-							let myLocalizedReasonString = "Create a bootable macOS Installer"
+							let myLocalizedReasonString = "Create a bootable macOS installer"
 							
 							var authError: NSError?
 							
@@ -910,7 +910,7 @@ class InstallingViewController: GenericViewController{
 			
             return
             
-        }else if (self.error.last?.contains("A error occurred erasing the disk."))! || (self.output.last?.contains("A error occurred erasing the disk."))! {
+        }else if (self.error.last?.contains("A error occurred erasing the disk."))! || (self.output.last?.contains("An error occurred erasing the disk."))! {
             
             //here createinstall media failed to create the installer, bacuse of a format failure
             log("macOS install media creation failed, createinstallmedia returned an error while formatting the installer, please, erase this dirve with disk utility and retry")
@@ -921,7 +921,7 @@ class InstallingViewController: GenericViewController{
         }else if (self.error.last?.contains("does not appear to be a valid OS installer application"))! || (self.error.last?.contains("does not appear to be a valid OS installer application"))! {
             
             //here createinstall media failed to create the installer, bacuse of the downloaded app not being a valid one
-            log("macOS install media creation failed, createinstallmedia returned an error about the app you are using, please, check your mac installaltion app and if needed download it again. Many thimes this appens ,because the installer downloaded from the mac app store, does not contains all the needed files or contanins wrong or corrupted files, in many cases the mac app store on a virtual machine does not downloads the full macOS installer application")
+            log("macOS install media creation failed, createinstallmedia returned an error about the app you are using, please, check your mac installaltion app and if needed download it again. Many times this happens because the installer downloaded from the Mac App Store, does not contains all the needed files or contanins wrong or corrupted files, in many cases the Mac App Store on a virtual machine does not download the full macOS installer application")
             
             //showing tp the installer screen
             self.goToFinalScreen(title: "macOS install media creation failed: Damaged or bad macOS application, check the log for details", success: false)
@@ -1076,9 +1076,9 @@ class InstallingViewController: GenericViewController{
 					errorsList.append(CheckItem(stringsToCheck: [llo], valuesToCheck: ["done", "install media now available at "], printMessage: "Bootable macOS installer created successfully!", message: "Bootable macOS installer created successfully", notError: true, operation: .contains, isBack: false))
 				}
 				
-				errorsList.append(CheckItem(stringsToCheck: [tt, le, lo], valuesToCheck: ["A error occurred erasing the disk."], printMessage: "Bootable macOS installer creation failed, createinstallmedia returned an error while formatting the target drive, please, erase this dirve with disk utility and retry", message: "TINU failed to format \"\(dname)\"", notError: false, operation: .contains, isBack: false))
+				errorsList.append(CheckItem(stringsToCheck: [tt, le, lo], valuesToCheck: ["An error occurred erasing the disk."], printMessage: "Bootable macOS installer creation failed, 'createinstallmedia' returned an error while formatting the target drive, please, erase this dirve with disk utility and retry", message: "TINU failed to format \"\(dname)\"", notError: false, operation: .contains, isBack: false))
 				
-				errorsList.append(CheckItem(stringsToCheck: [tt, fe, le, me, lo], valuesToCheck: ["does not appear to be a valid OS installer application"], printMessage: "bootable macOS installer creation failed, createinstallmedia returned an error about the app you are using, please, check your mac installaltion app and if needed download it again. Many thimes this appens ,because the installer downloaded from the mac app store, does not contains all the needed files or contanins wrong or corrupted files, in many cases the mac app store on a virtual machine does not downloads the full macOS installer application", message: "Bootable macOS installer creation failed because the selected macOS installer app is damaged", notError: false, operation: .contains, isBack: false))
+				errorsList.append(CheckItem(stringsToCheck: [tt, fe, le, me, lo], valuesToCheck: ["does not appear to be a valid OS installer application"], printMessage: "bootable macOS installer creation failed, 'createinstallmedia' returned an error about the app you are using, please, check your mac installation app and if needed download it again. Many times this happens because the installer downloaded from the Mac App Store, does not contains all the needed files or contanins wrong or corrupted files, in many cases the Mac App Store on a virtual machine does not download the full macOS installer application", message: "Bootable macOS installer creation failed because the selected macOS installer app is damaged or incomplete", notError: false, operation: .contains, isBack: false))
 				
 				errorsList.append(CheckItem(stringsToCheck: [tt, fe, le, me, lo], valuesToCheck: ["is not a valid volume mount point"], printMessage: "Bootable macOS installer creation failed because the selected volume is no longer available", message: "Bootable macOS installer creation failed because the drive \"\(dname)\" is no longer available", notError: false, operation: .contains, isBack: false))
 				
@@ -1120,13 +1120,13 @@ class InstallingViewController: GenericViewController{
 							
 							DispatchQueue.global(qos: .background).sync {
 								//here createinstall media succedes in creating the installer
-								log("\(sharedExecutableName) process ended with success")
+								log("\(sharedExecutableName) process finished successfully")
 								log("Bootable macOS installer created successfully!")
 								
 								//extra operations here
 								//trys to apply special options
 								
-								self.setActivityLabelText("Applaying custom options")
+								self.setActivityLabelText("Applying custom options")
 								
 								res = self.manageSpecialOperations(true)
 							}

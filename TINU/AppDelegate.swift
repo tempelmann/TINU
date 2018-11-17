@@ -422,14 +422,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 			}else{
 				print("no debug file found!")
 				
-				msgBoxWarning("Impossible to use diagnostics mode", "Needed files inside TINU are missing, so the diagnostics mode can't be used, try to download again this app and then retry.")
+				msgBoxWarning("Impossible to use diagnostics mode", "Needed files inside TINU are missing, so the diagnostics mode can't be used. Download this app again and then try again.")
 			}
 			
         }else{
             if CreateinstallmediaSmallManager.shared.sharedIsCreationInProgress || CreateinstallmediaSmallManager.shared.sharedIsPreCreationInProgress{
-                msgBox("You can't switch mode now", "The bootable macOS installer creation process is currenly running, please cancel the operation or wait the end of the operation before switching mode", .warning)
+                msgBox("You can't switch mode now", "The bootable macOS installer creation process is currenly running. Please cancel the operation or wait for the operation to end before switching the mode.", .warning)
             }else if sharedIsOnRecovery{
-                msgBoxWarning("You can't switch mode now", "Switching the mode in witch TINU is running, is not allowed while running TINU on a Mac recovery/istaller")
+                msgBoxWarning("You can't switch the mode right now", "Switching the mode in which TINU is running is not possible while running TINU from this recovery/installer system.")
             }
         }
     }

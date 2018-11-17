@@ -87,7 +87,7 @@ class InfoViewController: GenericViewController{
 		
 		#if noFirstAuth
 			if !sharedIsOnRecovery{
-				msgBoxWarning("WARNING", "This app has been compiled with first step authentication disabled.\nIt may be less secure to use, use it at your own risk!")
+				msgBoxWarning("WARNING", "This app has been compiled with first step authentication disabled.\nIt may be less secure to use. Use it at your own risk!")
 			}
 		#endif
 	}
