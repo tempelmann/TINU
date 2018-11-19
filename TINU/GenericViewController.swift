@@ -22,6 +22,7 @@ public class GenericViewController: ShadowViewController {
 	override public func viewDidAppear() {
         viewDidSetVibrantLook()
     }
+    
     /**Function called when the aspect mode of tyhe window is changed, you can override it as well, just remember to call super.viewDidSetVibrantLook()*/
     func viewDidSetVibrantLook(){
         if canUseVibrantLook && sharedUseFocusArea{

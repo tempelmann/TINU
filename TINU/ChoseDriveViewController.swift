@@ -818,7 +818,7 @@ class ChoseDriveViewController: GenericViewController {
                 }
 				
 				if cvm.shared.sharedVolumeNeedsPartitionMethodChange{
-					if !dialogCustomWarning(question: "Format \"\(dname)\"?", text: dialogText, style: .warning, proceedButtonText: "Erase", cancelButtonText: "Don't Erase"){
+					if !dialogCriticalWarning(question: "Format \"\(dname)\"?", text: dialogText, style: .warning, proceedButtonText: "Erase", cancelButtonText: "Don't Erase"){
                         return
                     }
                 }
@@ -826,7 +826,7 @@ class ChoseDriveViewController: GenericViewController {
 			
 			if cvm.shared.sharedDoTimeMachineWarn{
 				let pname = cvm.shared.currentPart.name
-				if !dialogCustomWarning(question: "Format \"\(pname)\"?", text: "The partition \"\(pname)\" is used for Time Machine backups, and may contain your backed up files. Your backups will be lost if you use it!", style: .warning, proceedButtonText: "Erase", cancelButtonText: "Don't Erase"){
+				if !dialogCriticalWarning(question: "Format \"\(pname)\"?", text: "The partition \"\(pname)\" is used for Time Machine backups, and may contain your backed up files. Your backups will be lost if you use it!", style: .warning, proceedButtonText: "Erase", cancelButtonText: "Don't Erase"){
 					return
 				}
 			}

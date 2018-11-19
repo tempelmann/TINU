@@ -83,7 +83,22 @@ public func dialogYesNoWarning(question: String, text: String, style: NSAlertSty
 	return true
 }
 
-public func dialogCustomWarning(question: String, text: String, style: NSAlertStyle, proceedButtonText: String, cancelButtonText: String) -> Bool {
+public func dialogCustomWarning(question: String, text: String, style: NSAlertStyle, mainButtonText: String, secondButtonText: String) -> Bool {
+	let myPopup: NSAlert = NSAlert()
+	myPopup.messageText = question
+	myPopup.informativeText = text
+	myPopup.alertStyle = style
+	myPopup.addButton(withTitle: mainButtonText)
+	myPopup.addButton(withTitle: secondButtonText)
+	myPopup.icon = IconsManager.shared.warningIcon
+	let res = myPopup.runModal()
+	if res == NSAlertFirstButtonReturn {
+		return false
+	}
+	return true
+}
+
+public func dialogCriticalWarning(question: String, text: String, style: NSAlertStyle, proceedButtonText: String, cancelButtonText: String) -> Bool {
 	let myPopup: NSAlert = NSAlert()
 	myPopup.messageText = question
 	myPopup.informativeText = text
@@ -93,8 +108,7 @@ public func dialogCustomWarning(question: String, text: String, style: NSAlertSt
 	myPopup.addButton(withTitle: cancelButtonText)
 	// Make the left button the Default button.
 	myPopup.buttons[0].keyEquivalent = "";
-	myPopup.buttons[1].keyEquivalent = "\r" // "\u{1B}"	// Esc key
-	// TODO: add a delegate to also cancel the dialog if Esc or cmd-. is typed: myPopup.delegate = self
+	myPopup.buttons[1].keyEquivalent = "\r"	// Return key
 	let res = myPopup.runModal()
 	if res == NSAlertFirstButtonReturn {
 		return true	// proceed

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-//this class maages the window
+//this class manages the window
 public class mainWindowController: GenericWindowController {
 
     override public func windowDidLoad() {
@@ -22,7 +22,6 @@ public class mainWindowController: GenericWindowController {
         self.setUI()
         
         sharedWindow = self.window
-        
         sharedStoryboard = self.storyboard
         
         //self.contentViewController?.viewDidLoad()

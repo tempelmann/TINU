@@ -1618,7 +1618,7 @@ class InstallingViewController: GenericViewController{
             text = "Do you want to stop the macOS installation process?"
         }
         
-		if dialogCustomWarning(question: dTitle, text: text, style: .informational, mainButtonText: "Continue", secondButtonText: "Stop" ){
+		if dialogCritcalWarning(question: dTitle, text: text, style: .informational, mainButtonText: "Stop", secondButtonText: "Don't Stop" ){
             return stop(mustStop: true)
         }else{
             return true
