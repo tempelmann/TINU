@@ -97,7 +97,6 @@ public class ShadowViewController: NSViewController{
 				v.layer?.zPosition = startZpos + 2
 			}
 		}
-		
 	}
 	
 	func setShadowViewsTopBottomOnly(respectTo refView: NSView, topBottomViewsShadowRadius: CGFloat){
@@ -110,23 +109,15 @@ public class ShadowViewController: NSViewController{
 		topView.customShadowRadius = topBottomViewsShadowRadius
 		topView.useShadow = true
 		topView.layer?.zPosition = startZpos + 1
-		
-		/*
-		NSLayoutConstraint(item: topView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0.0).isActive = true
-		NSLayoutConstraint(item: topView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1.0, constant: 0.0).isActive = true
-		NSLayoutConstraint(item: topView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: ., multiplier: 1.0, constant: 0.0).isActive = true*/
-		
+		topView.autoresizingMask = [.viewWidthSizable, .viewMinYMargin, .viewMinXMargin, .viewMaxXMargin] 	// dock to top, left, right -- needs to update the shadow's size when view gets resized, though!
 		self.view.addSubview(topView)
-		
+
 		bottomView = ShadowPanel(frame: NSRect(x: 0, y: 0, width: self.view.frame.width, height: refView.frame.origin.y))
 		bottomView.customShadowRadius = topBottomViewsShadowRadius
 		bottomView.useShadow = true
 		bottomView.layer?.zPosition = startZpos + 1
-		
-		/*NSLayoutConstraint(item: bottomView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0.0).isActive = true
-		NSLayoutConstraint(item: bottomView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .left, multiplier: 1.0, constant: 0.0).isActive = true
-		NSLayoutConstraint(item: bottomView, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .right, multiplier: 1.0, constant: 0.0).isActive = true
-		*/
+		bottomView.autoresizingMask = [.viewWidthSizable] 	// dock to bottom, left, right -- needs to update the shadow's size when view gets resized, though!
 		self.view.addSubview(bottomView)
 	}
+
 }

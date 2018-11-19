@@ -13,6 +13,7 @@ import Cocoa
 class EFIPartitionMounterViewController: AppViewController {
 	
 	@IBOutlet weak var scrollView: NSScrollView!
+	@IBOutlet weak var scrollHeight: NSLayoutConstraint!
 	@IBOutlet weak var spinner: NSProgressIndicator!
 	
 	@IBOutlet weak var refreshButton: NSButton!
@@ -36,31 +37,31 @@ class EFIPartitionMounterViewController: AppViewController {
         
         #if isTool
         
-        print("checking command line arguments")
-        for i in CommandLine.arguments {
-            print(i)
-            switch i {
-            case "-diagnostics":
-                if let delegate = NSApplication.shared().delegate as? AppDelegate{
-                    delegate.diagnosticsItem.isEnabled = false
-                }
-                
-                print("diagnostics mode detected")
-            case "-forcerecovery":
-                simulateRecovery = true
-            default:
-                break
-            }
-        }
-        print("command line args checked")
-		
-        if startsAsMenu{
-            startsAsMenu.toggle()
-            
-        	AppManager.shared.checkUser()
-            AppManager.shared.checkSettings()
-        }
-        
+			print("checking command line arguments")
+			for i in CommandLine.arguments {
+				print(i)
+				switch i {
+				case "-diagnostics":
+					if let delegate = NSApplication.shared().delegate as? AppDelegate{
+						delegate.diagnosticsItem.isEnabled = false
+					}
+					
+					print("diagnostics mode detected")
+				case "-forcerecovery":
+					simulateRecovery = true
+				default:
+					break
+				}
+			}
+			print("command line args checked")
+			
+			if startsAsMenu{
+				startsAsMenu.toggle()
+				
+				AppManager.shared.checkUser()
+				AppManager.shared.checkSettings()
+			}
+			
         #endif
         
 		self.view.wantsLayer = true
@@ -83,6 +84,7 @@ class EFIPartitionMounterViewController: AppViewController {
     override func viewWillAppear() {
         super.viewWillAppear()
 		//self.window.isFullScreenEnaled = true
+		self.window.styleMask.insert(.resizable)
     }
     #endif
     
@@ -92,32 +94,32 @@ class EFIPartitionMounterViewController: AppViewController {
         print("Main view view did appear triggered")
         
         #if isTool
-        
-        if !barMode{
-            toolMainViewController = self
-        }
-        
-        for c in self.view.subviews{
-            if let l = c as? NSTextField{
-                l.drawsBackground = true
-                (l as NSView).backgroundColor = (l.superview! as NSView).backgroundColor
-            }
-        }
-        
-        self.spinner.isDisplayedWhenStopped = false
-        self.spinner.usesThreadedAnimation = true
-        
-        
-        if barMode{
-            iconModeButton.title = "Window mode"
-        }else{
-            iconModeButton.title = "Tool bar mode"
-        }
-        
-        if !self.barMode && startsAsMenu{
-            print("the app is starting as menu item, avoiding loosing tiome on a window which will be closed")
-            return
-        }
+			
+			if !barMode{
+				toolMainViewController = self
+			}
+			
+			for c in self.view.subviews{
+				if let l = c as? NSTextField{
+					l.drawsBackground = true
+					(l as NSView).backgroundColor = (l.superview! as NSView).backgroundColor
+				}
+			}
+			
+			self.spinner.isDisplayedWhenStopped = false
+			self.spinner.usesThreadedAnimation = true
+			
+			
+			if barMode{
+				iconModeButton.title = "Window mode"
+			}else{
+				iconModeButton.title = "Tool bar mode"
+			}
+			
+			if !self.barMode && startsAsMenu{
+				print("the app is starting as menu item, avoiding losing time on a window which will be closed")
+				return
+			}
         
         #endif
 		
@@ -157,13 +159,9 @@ class EFIPartitionMounterViewController: AppViewController {
     
 	@IBAction func refresh(_ sender: Any) {
 		scrollView.isHidden = true
-		
 		errorImage.isHidden = true
-		
 		errorLabel.isHidden = true
-		
 		errorRefreshButton.isHidden = true
-		
 		refreshButton.isHidden = true
 		
 		setScrollView()
@@ -172,7 +170,6 @@ class EFIPartitionMounterViewController: AppViewController {
 			self.eFIManager.clearPartitionsCache()
 			self.eFIManager.buildPartitionsCache()
 		}
-		
 	}
 	
 	@IBAction func close(_ sender: Any) {
@@ -197,34 +194,22 @@ class EFIPartitionMounterViewController: AppViewController {
 				
 				items.reverse()
 				
-				//items = []
-				
 				if items.isEmpty{
 					empty = true
 				}else{
-					
 					DispatchQueue.main.sync {
-						
 						let background = NSView()
 						
                         //background.backgroundColor = .red
-						
 						background.wantsLayer = true
-						
-						
 						background.frame.size.height = 20
 						background.frame.size.width = self.scrollView.frame.width - 2
 						
 						for item in items{
-                            
 							item.frame.origin = NSPoint(x: 20, y: background.frame.height)
-							
 							item.wantsLayer = true
-							
 							item.updateLayer()
-							
 							background.addSubview(item)
-							
 							background.frame.size.height += item.frame.height + 15
 						}
 						
@@ -232,23 +217,18 @@ class EFIPartitionMounterViewController: AppViewController {
                         
                         if background.frame.height < self.scrollView.frame.height - 2{
                             let newView = NSView(frame: NSRect(x: 0, y: 0, width: background.frame.width, height: self.scrollView.frame.height - 2))
-                            
                             //newView.backgroundColor = .green
-                            
                             background.frame.origin.x = 0
                             background.frame.origin.y = (newView.frame.height / 2) - background.frame.height / 2
-                            
                             newView.addSubview(background)
-                            
                             self.scrollView.documentView = newView
                         }else{
                             self.scrollView.documentView = background
                         }
+
+						self.scrollHeight.constant = self.scrollView.documentView!.frame.height	// limit window height to the available content in the scroll view
 						
 						self.scrollView.isHidden = false
-						
-						self.refreshButton.isHidden = false
-						
 						self.refreshButton.isHidden = false
 						
 						if let documentView = self.scrollView.documentView{
@@ -257,9 +237,6 @@ class EFIPartitionMounterViewController: AppViewController {
                                // documentView.frame.size.width -= 12
                             }
 						}
-                        
-                        
-						
 					}
 				}
 			}else{
@@ -268,22 +245,14 @@ class EFIPartitionMounterViewController: AppViewController {
 			
 			if empty{
 				DispatchQueue.main.sync {
-					
 					self.scrollView.isHidden = true
-					
 					self.errorImage.image = IconsManager.shared.warningIcon
-					
 					self.errorImage.isHidden = false
-					
 					self.errorLabel.isHidden = false
-					
 					self.errorRefreshButton.isHidden = false
-					
 					self.refreshButton.isHidden = true
-					
 				}
 			}
-			
 			
 			DispatchQueue.main.sync {
 				self.spinner.isHidden = true
@@ -305,17 +274,17 @@ class EFIPartitionMounterViewController: AppViewController {
 			if let eFIData = resp{
 				for drive in eFIData{
 					DispatchQueue.main.sync {
-					let item = EFIItem()
-					
-					item.titleLabel.stringValue = drive.displayName
-					item.bsdid = drive.bsdName
-					
-					item.frame.size.height = 100
-					
-					item.frame.size.width = self.scrollView.frame.size.width - 40
-					
-					item.isMounted = drive.isMounted
-                        
+						let item = EFIItem()
+						
+						item.titleLabel.stringValue = drive.displayName
+						item.bsdid = drive.bsdName
+						
+						item.frame.size.height = 100
+						
+						item.frame.size.width = self.scrollView.frame.size.width - 40
+						
+						item.isMounted = drive.isMounted
+							
                         item.hasConfig = drive.hasConfig
                         
                         item.isEjectable = drive.isRemovable
@@ -326,20 +295,20 @@ class EFIPartitionMounterViewController: AppViewController {
                         
                         if cnt != 0{
 						
-						for i in 0...cnt - 1{
-                            let partition = drive.completeDrivePartitions[i]
-                            
-							let part = PartItem()
-							
-							part.imageView.image = partition.drivePartIcon
-							part.nameLabel.stringValue = partition.drivePartDisplayName
-							
-							item.partitions.append(part)
-							
-							if i % 3 == 0{
-								item.frame.size.height += item.tileHeight + 5
+							for i in 0...cnt - 1{
+								let partition = drive.completeDrivePartitions[i]
+								
+								let part = PartItem()
+								
+								part.imageView.image = partition.drivePartIcon
+								part.nameLabel.stringValue = partition.drivePartDisplayName
+								
+								item.partitions.append(part)
+								
+								if i % 3 == 0{
+									item.frame.size.height += item.tileHeight + 5
+								}
 							}
-						}
                             
                         }
 						
